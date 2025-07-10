@@ -21,19 +21,19 @@ Overall, this project showcases the effective integration of IoT hardware, machi
 → Sends data to Flask API
 ← Receives predicted weather condition
 → Sends temperature, humidity, pressure + prediction to Blynk app
-→ User manually controls water pump based on:
-→ Soil moisture reading
-→ Predicted weather (e.g., avoid watering if rain is predicted)
+→ User manually controls water pump based on
+ Soil moisture reading,
+ Predicted weather (e.g., avoid watering if rain is predicted)
 
 ## 🧠 How the Code Works
 
-### 🛰️ `weather_iot.ino` (Arduino code for ESP8266)
+### 🛰️ Arduino code for ESP8266
 
 - **Reads sensor data**:
   - Temperature and humidity from DHT11 (connected to D4)
   - Pressure from BMP180 (connected to I2C pins)
   - Soil moisture level from analog pin A0
-- **Displays sensor values on Blynk App** via virtual pins:
+- **Displays sensor values on Blynk App** via virtual pins.
 - **Sends a POST request** to the Flask API `/predict` endpoint with:
   ```json
   {
